@@ -23,7 +23,7 @@ const EditContact =()=> {
     updateContactHandler({id,name:newName,email:newEmail});
     setNewName("")
     setNewEmail("")
-    navigate("/")
+    navigate("/list")
   
   };
 
@@ -55,7 +55,7 @@ const EditContact =()=> {
           </div>
 
           <button className="ui button blue ">Update</button>
-          <Link to="/"> <button className="ui button red right">cancel</button>
+          <Link to="/list"> <button className="ui button red right">cancel</button>
         </Link>
          
         </form>

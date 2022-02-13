@@ -1,6 +1,8 @@
 import React from "react";
 import user from "../images/user.png";
 import { Link } from "react-router-dom";
+import userm from "../images/userm.jpeg";
+import userf from "../images/userf.jpeg";
 
 import { useContactsCrud } from "../context/ContactsCrudContext";
 
@@ -9,13 +11,17 @@ const ContactCard = (props) => {
   const deleteContact = (id) => {
     removeContactHandler(id);
   };
-  const { id, name, email } = props.contact;
+  const { id, name, email, gender } = props.contact;
 
   return (
     <div className="item" style={{ padding: "20px" }}>
-      <img className="ui avatar image" src={user} alt="user" />
+      <img
+        className="ui avatar image"
+        src={gender === "Male" ? userm : userf}
+        alt="user"
+      />
       <div className="content">
-        <Link to={`/ContactDetail/${id}`} state={{ contact: props.contact }} >
+        <Link to={`/ContactDetail/${id}`} state={{ contact: props.contact }}>
           <div className="header">{name}</div>
           <div>{email}</div>
         </Link>

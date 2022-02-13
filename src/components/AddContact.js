@@ -2,11 +2,10 @@ import React, { Component, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContactsCrud } from "../context/ContactsCrudContext";
 
-
 const AddContact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("");
   const { addContactHandler } = useContactsCrud();
   const navigate = useNavigate();
 
@@ -21,7 +20,7 @@ const AddContact = () => {
     setName("");
     setEmail("");
     setGender("");
-    navigate("/");
+    navigate("/list");
   };
 
   return (
@@ -54,13 +53,23 @@ const AddContact = () => {
             <label>Gender</label>
             <div class="field">
               <div class="ui radio checkbox">
-                <input type="radio" name="gender" value="Male" onChange={(e)=> setGender(e.target.value)}/>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  onChange={(e) => setGender(e.target.value)}
+                />
                 <label>Male</label>
               </div>
             </div>
             <div class="field">
               <div class="ui radio checkbox">
-                <input type="radio" name="gender" value="Female" onChange={(e)=> setGender(e.target.value)}/>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  onChange={(e) => setGender(e.target.value)}
+                />
                 <label>Female</label>
               </div>
             </div>
@@ -68,8 +77,7 @@ const AddContact = () => {
         </div>
 
         <button className="ui button blue ">Save</button>
-        <Link to="/">
-          {" "}
+        <Link to="/list">
           <button className="ui button red right">cancel</button>
         </Link>
       </form>

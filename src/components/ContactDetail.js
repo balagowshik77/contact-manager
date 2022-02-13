@@ -21,7 +21,7 @@ const ContactDetail = () => {
         </div>
       </div>
       <div className="center-div">
-        <Link to="/">
+        <Link to="/list">
           <button class="ui  button green center">Go back</button>
         </Link>
       </div>
