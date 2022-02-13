@@ -27,7 +27,7 @@ const ContactCard = (props) => {
         </Link>
       </div>
       <div style={{ display: "flex", alignContent: "end", float: "right" }}>
-        <Link to={`edit`} state={{ contact: props.contact }}>
+        <Link to={`/edit`} state={{ contact: props.contact }}>
           <i
             className="large edit alternate outline  icon "
             style={{
