@@ -2,12 +2,17 @@ import { createContext, useContext, useState } from "react";
 import api from "../api/contacts";
 import { v4 as uuidv4 } from "uuid";
 
+
 const contactsCrudContext = createContext();
 
 export function ContactsCrudContextProvider({ children }) {
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [currentTheme,setCurrentTheme] = useState(false)
+  
+
+  
   //retrieve contacts
   const retrieveContacts = async () => {
     const response = await api.get("/contacts");
@@ -57,6 +62,12 @@ export function ContactsCrudContextProvider({ children }) {
       setSearchResult(contacts);
     }
   };
+
+  //themeChanger
+  const themeChanger = (themeMode)=> {
+    setCurrentTheme(themeMode)
+    
+  }
   const value = {
     contacts,
     retrieveContacts,
@@ -65,7 +76,9 @@ export function ContactsCrudContextProvider({ children }) {
     updateContactHandler,
     searchTerm,
     searchHandler,
-    searchResult
+    searchResult,
+    themeChanger,
+    currentTheme
   };
   return (
     <contactsCrudContext.Provider value={value}>

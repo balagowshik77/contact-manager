@@ -7,7 +7,7 @@ import userf from "../images/userf.jpeg";
 import { useContactsCrud } from "../context/ContactsCrudContext";
 
 const ContactCard = (props) => {
-  const { removeContactHandler } = useContactsCrud();
+  const { removeContactHandler,currentTheme } = useContactsCrud();
   const deleteContact = (id) => {
     removeContactHandler(id);
   };
@@ -22,16 +22,16 @@ const ContactCard = (props) => {
       />
       <div className="content">
         <Link to={`/ContactDetail/${id}`} state={{ contact: props.contact }}>
-          <div className="header">{name}</div>
-          <div>{email}</div>
+          <div className="header" style={{color:currentTheme?"white":"black"}}>{name}</div>
+          <div style={{color:currentTheme?"rgb(30, 92, 226)":"rgb(33, 30, 226)"}}>{email}</div>
         </Link>
       </div>
       <div style={{ display: "flex", alignContent: "end", float: "right" }}>
         <Link to={`/edit`} state={{ contact: props.contact }}>
           <i
-            className="large edit alternate outline  icon "
+            className="large edit alternate outline   icon "
             style={{
-              color: "blue",
+              color: "#1e5de4f6",
               alignItems: "self-end",
               marginBottom: "10px",
               marginTop: "10px",

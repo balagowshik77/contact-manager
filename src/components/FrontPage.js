@@ -11,14 +11,18 @@ const FrontPage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
+        height: "667px",
         width: "100%",
         backgroundImage: `url(${bgimage}) `,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        position: "fixed",
-        left: "0",
+        position:"absolute",
+        top:"0px",
+        left:"0px",
+        bottom:"0px",
+        right:"0px"
+        
       }}
     >
       <div
@@ -29,6 +33,10 @@ const FrontPage = () => {
           alignItems: "center",
           height: "100%",
           width: "100%",
+          position:"absolute",
+          right:"0px",
+          left:"0px",
+          top:"0px",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
@@ -51,11 +59,21 @@ const FrontPage = () => {
         </div>
         <div class="ui hidden divider"></div>
         <div className="footer">
-          <h4 style={{ color: "white" }}>CREATED BY</h4>
-          <h2 class="ui medium header" style={{ color: "white" }}>
+          <div
+            style={{
+              color: "white",
+              marginLeft: "1px",
+              fontSize: "18px",
+              marginTop: "20px",
+            }}
+          >
+            from
+          </div>
+          <div style={{ color: "white", fontSize: "23px", marginTop: "10px" }}>
             BHARATH VAULT
-          </h2>
+          </div>
         </div>
+       
       </div>
     </div>
   );
